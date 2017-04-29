@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.sid.ithakademo.MainActivity" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:elevation="2dp"
+        android:visibility="invisible"
+        android:id="@+id/searchLayout"
+        android:background="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Search transport info between:"
+            android:textAlignment="center"
+            android:id="@+id/searchTitleText"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/searchTitleText"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:tint="@android:color/holo_red_light"
+            android:id="@+id/arrow"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_toLeftOf="@+id/arrow"
+            android:layout_below="@+id/searchTitleText"
+            android:layout_marginEnd="40dp"
+            android:textSize="16sp"
+            android:id="@+id/startCity"
+            android:text="Select"
+            android:textColor="@android:color/darker_gray"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/arrow"
+            android:layout_below="@+id/searchTitleText"
+            android:layout_marginStart="16sp"
+            android:textSize="16sp"
+            android:id="@+id/destinationCity"
+            android:text="Select destination"
+            android:textColor="@android:color/darker_gray"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/arrow"
+            android:textColor="@android:color/darker_gray"
+            android:id="@+id/searchButton"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Search"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>
+
