@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:layout_height="match_parent"
+    tools:context="com.sid.ithakademo.transport.detail.TrandportDetailFrag">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        app:contentInsetStart="0dp"
+        android:id="@+id/toolbar"
+        android:background="@color/colorAccent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:padding="16dp"
+                android:id="@+id/back"
+                android:tint="@android:color/white"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Transport Details"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:text="Routes options"
+        android:id="@+id/routeOptionText"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="Price"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginEnd="16dp"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"
+        android:id="@+id/sortButton"
+         android:layout_alignParentEnd="true"
+        android:layout_height="36dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:text="Sort: "
+        android:textSize="16sp"
+        android:id="@+id/sortText"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/sortButton"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@+id/routeOptionText"
+        android:layout_marginTop="8dp"
+        android:id="@+id/v1"
+        android:background="@color/colorGray"
+        android:layout_height="0.5dp">
+    </View>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/v1"
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="8dp"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

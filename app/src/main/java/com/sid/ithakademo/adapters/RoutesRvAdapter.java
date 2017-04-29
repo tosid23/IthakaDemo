@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.sid.ithakademo.MainActivity;
 import com.sid.ithakademo.R;
 import com.sid.ithakademo.lists.RoutesLists;
 
@@ -17,11 +18,13 @@ import java.util.List;
 
 public class RoutesRvAdapter extends RecyclerView.Adapter<RoutesRvAdapter.MyViewHolder> {
 
-    public RoutesRvAdapter(List<RoutesLists> list) {
+    public RoutesRvAdapter(List<RoutesLists> list,MainActivity mainActivity) {
         this.list = list;
+        this.mainActivity=mainActivity;
     }
 
     List<RoutesLists> list;
+    MainActivity mainActivity;
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,6 +42,9 @@ public class RoutesRvAdapter extends RecyclerView.Adapter<RoutesRvAdapter.MyView
         holder.type.setText(routesLists.getType());
         holder.cityA.setText(routesLists.getCityA());
         holder.cityB.setText(routesLists.getCityB());
+        if(position==(getItemCount()-1)){
+            mainActivity.showFab();
+        }
     }
 
     @Override

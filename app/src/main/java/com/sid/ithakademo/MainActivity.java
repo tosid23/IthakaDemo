@@ -1,8 +1,11 @@
 package com.sid.ithakademo;
 
 import android.graphics.Color;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -28,6 +31,7 @@ import com.sid.ithakademo.lists.RoutesLists;
 import com.sid.ithakademo.networking.RoutesService;
 import com.sid.ithakademo.pojo.lists.Routes;
 import com.sid.ithakademo.pojo.lists.Trips;
+import com.sid.ithakademo.transport.detail.TrandportDetailFrag;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,6 +63,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     private static final LatLng suratThani = new LatLng(9.1546336, 99.2639922);
 
     String TAG = "IthakaDemo";
+    String cityA,cityB;
     int markerClickCount =0;
 
     TextView startCity,destinationCity;
@@ -67,6 +72,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     RecyclerView recyclerView;
     RoutesRvAdapter adapter;
     ProgressBar progressBar;
+    FloatingActionButton fab;
 
     private List<RoutesLists> routesListses = new ArrayList<>();
 
@@ -93,8 +99,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        fab = (FloatingActionButton)findViewById(R.id.fab);
 
-        adapter = new RoutesRvAdapter(routesListses);
+        adapter = new RoutesRvAdapter(routesListses,this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext()
                 ,LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -106,7 +113,25 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getRoutes(startCity.getText().toString(),destinationCity.getText().toString());
+                cityA = startCity.getText().toString();
+                cityB = destinationCity.getText().toString();
+                getRoutes(cityA,cityB);
+
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("cityA", cityA);
+                bundle.putString("cityB", cityB);
+                Fragment fragment = new TrandportDetailFrag();
+                fragment.setArguments(bundle);
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(android.R.id.content, fragment);
+                ft.addToBackStack(null);
+                ft.commit();
             }
         });
     }
@@ -234,4 +259,14 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
     }
+
+    public void showFab(){
+        fab.setVisibility(View.VISIBLE);
+    }
+
+    public void hideFab(){
+        fab.setVisibility(View.INVISIBLE);
+    }
+
+
 }

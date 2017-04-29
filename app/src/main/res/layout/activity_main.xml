@@ -82,5 +82,17 @@
         android:visibility="invisible"
         android:layout_height="wrap_content" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_add_black_24dp"
+        android:tint="@android:color/white"
+        android:visibility="invisible"
+        android:id="@+id/fab"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
 
