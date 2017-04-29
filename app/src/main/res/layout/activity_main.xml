@@ -66,5 +66,21 @@
             android:text="Search"
             android:layout_height="wrap_content" />
     </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recyclerView"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/progressBar"
+        android:visibility="invisible"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="5dp"
+        android:paddingTop="16dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="210dp"
+            android:layout_height="110dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="City A"
+                android:id="@+id/cityAText"
+                android:layout_toStartOf="@+id/arrow"
+                android:layout_marginBottom="4dp"
+                android:layout_above="@+id/v1"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/v1"
+                android:id="@+id/arrow"
+                android:tint="@android:color/holo_red_light"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="City B"
+                android:id="@+id/cityBText"
+                android:layout_marginBottom="4dp"
+                android:layout_toEndOf="@+id/arrow"
+                android:layout_above="@+id/v1"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="150dp"
+                android:id="@+id/v1"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorGray"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/type"
+                android:layout_height="0.5dp">
+            </View>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Direct Combo"
+                android:layout_centerInParent="true"
+                android:id="@+id/type"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="0.5dp"
+                android:background="@color/colorGray"
+                android:id="@+id/v2"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/type"
+                android:layout_height="20dp">
+            </View>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_toStartOf="@+id/v2"
+                android:layout_below="@+id/type"
+                android:id="@+id/timeText"
+                android:text="12 Hours"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@+id/v2"
+                android:layout_marginStart="8dp"
+                android:id="@+id/costText"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/type"
+                android:text="700 TBH"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
